@@ -1,5 +1,5 @@
 import 'server-only';
-import { AutoProcessor, RawImage, AutoTokenizer , CLIPTextModelWithProjection,CLIPVisionModelWithProjection } from '@xenova/transformers';
+//import { AutoProcessor, RawImage, AutoTokenizer , CLIPTextModelWithProjection,CLIPVisionModelWithProjection } from '@xenova/transformers';
 import { Pinecone , QueryResponse, FetchResponse ,RecordMetadata } from '@pinecone-database/pinecone';
 import { Photo ,webCamObj,webCamMetadata } from './type';
 import { textEmbedding } from './embedding';

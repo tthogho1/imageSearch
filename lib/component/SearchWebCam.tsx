@@ -11,6 +11,11 @@ import { Loading } from './Loading';
 import { PhotoList } from './PhotoList';
 import { FetchResponse, RecordMetadata } from '@pinecone-database/pinecone';
 
+//
+// node server.mjs  (using custome server set below)
+// const url = 'webcamsearh' 
+//
+const url = process.env.NEXT_PUBLIC_SEARCH_URL ?? '/api/webcamsearch';
 const PhotoListWrapper: FunctionComponent<{
     loading: boolean;
     searchedPhotos: Photo[] | null;
@@ -49,7 +54,7 @@ export const SearchWebCam: FunctionComponent<{
                     onClick={async () => {
                         try {
                             setSearching(true);
-                            const response = await fetch(`/api/webcamsearch`,
+                            const response = await fetch(url,
                                 {
                                     method: 'POST',
                                     body: JSON.stringify({
